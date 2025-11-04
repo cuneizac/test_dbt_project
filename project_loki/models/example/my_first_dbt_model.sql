@@ -17,7 +17,7 @@ with source_data as (
 
 )
 
-select {{ generate_hash_key(["id", "event_time_aest"]) }} as HASH_SK, {{ generate_hash_key(["event_time_aest","id"]) }} as HASH_SK2,*
+select {{ generate_hash_key(["id", "event_time_aest"]) }} as HASH_SK, {{ generate_hash_key(["event_time_aest","id"]) }} as HASH_SK2,*, 'Demo' as demo
 from source_data
 
 /*
